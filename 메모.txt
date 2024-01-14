@@ -1,0 +1,6 @@
+CH15_nonPBR.fbx
+CH18_nonPBR.fbx
+CH49_nonPBR.fbx
+이 3가지 파일은 용량문제로 깃헙에 올리기 곤란하여 따로 가져오면된다.
+
+
