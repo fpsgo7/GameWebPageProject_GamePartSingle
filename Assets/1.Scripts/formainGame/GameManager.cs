@@ -58,10 +58,16 @@ public class GameManager : MonoBehaviour
     //탈출 관련 변수 
     public GameObject helicopterCamera;
     public GameObject helicopter;
+
+    // 점수 업데이트해주는 http 클래스
+    private ForMainGameHttp forMainGameHttp;
+
     private void Awake()
     {
         //로컬플레이어의 이름을 변수에 넣기
         myPlayerName = GameCharacterInfo.Nickname;
+        // 네트워크를 위한 클래스 객체 연결하기
+        forMainGameHttp = GameObject.Find("HTTPRequest").GetComponent<ForMainGameHttp>();
     }
 
     // 게임 시작과 동시에 플레이어가 될 게임 오브젝트를 생성
@@ -175,6 +181,7 @@ public class GameManager : MonoBehaviour
 #if UNITY_STANDALONE
         clearPanel.SetActive(true);
 #endif
+        forMainGameHttp.SetGameHighScore(UIManager.instance.score);
     }
     //게임 시작
     private void GameStart()

@@ -437,7 +437,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a852889158d2fad41bc9677701e69bbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  userId: user
+  playerName: 
 --- !u!4 &1181128524
 Transform:
   m_ObjectHideFlags: 0
@@ -1155,7 +1155,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5401730566368252404}
-        m_MethodName: InterGameLoomsButton_Click
+        m_MethodName: GameStartButton_Click
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
