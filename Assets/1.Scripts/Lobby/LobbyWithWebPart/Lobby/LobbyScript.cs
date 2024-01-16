@@ -15,7 +15,7 @@ public class LobbyScript : MonoBehaviour
     private CharacterRankScreenPanelScript characterRankScreenPanelScript;
     private ChattingPanelScript chattingPanelScript;
 
-    private PhotonActiveScript photonActiveScript;
+    private GameStartScript gameStartScript;
 
     private void Awake()
     {
@@ -28,7 +28,7 @@ public class LobbyScript : MonoBehaviour
         gameRoomsPanelScript = GameObject.Find("LobbyScript").GetComponent<GameRoomsPanelScript>();
         characterRankScreenPanelScript = GameObject.Find("LobbyScript").GetComponent<CharacterRankScreenPanelScript>();
         chattingPanelScript = GameObject.Find("LobbyScript").GetComponent<ChattingPanelScript>();
-        photonActiveScript = GameObject.Find("PhotonLobbyScript").GetComponent<PhotonActiveScript>();
+        gameStartScript = GameObject.Find("PhotonLobbyScript").GetComponent<GameStartScript>();
     }
 
     private void Start()
@@ -66,7 +66,7 @@ public class LobbyScript : MonoBehaviour
     {
         characterPanelScript.SetActive(false);
         gameRoomsPanelScript.SetActive(true);
-        photonActiveScript.ConnectPhotonServer();
+        gameStartScript.OnLogin();
     }
 
     /// <summary>

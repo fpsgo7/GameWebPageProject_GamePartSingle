@@ -61,7 +61,7 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         //로컬플레이어의 이름을 변수에 넣기
-        myPlayerName = Lobby.playerName;
+        myPlayerName = GameStartScript.playerName;
 
     }
 

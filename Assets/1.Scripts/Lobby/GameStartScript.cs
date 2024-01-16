@@ -1,13 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class Lobby : MonoBehaviour
+public class GameStartScript : MonoBehaviour
 {
-     public static Lobby instance
+     public static GameStartScript instance
     {
         get
         {
@@ -15,14 +13,14 @@ public class Lobby : MonoBehaviour
             if (m_instance == null)
             {
                 // 씬에서 GameManager 오브젝트를 찾아 할당
-                m_instance = FindObjectOfType<Lobby>();
+                m_instance = FindObjectOfType<GameStartScript>();
             }
 
             // 싱글톤 오브젝트를 반환
             return m_instance;
         }
     }
-    private static Lobby m_instance; // 싱글톤이 할당될 static 변수
+    private static GameStartScript m_instance; // 싱글톤이 할당될 static 변수
     //게임 상태
     public enum GameState
     {
