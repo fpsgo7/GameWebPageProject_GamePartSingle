@@ -11,7 +11,6 @@ public class LobbyScript : MonoBehaviour
     private CharacterPanelScript characterPanelScript;
     private MakeGameCharacterPanelScript makeGameCharacterPanelScript;
     private LoginPanelScript loginPanelScript;
-    private GameRoomsPanelScript gameRoomsPanelScript;
     private CharacterRankScreenPanelScript characterRankScreenPanelScript;
     private ChattingPanelScript chattingPanelScript;
 
@@ -25,7 +24,6 @@ public class LobbyScript : MonoBehaviour
         characterPanelScript = GameObject.Find("LobbyScript").GetComponent<CharacterPanelScript>();
         makeGameCharacterPanelScript = GameObject.Find("LobbyScript").GetComponent<MakeGameCharacterPanelScript>();
         loginPanelScript = GameObject.Find("LobbyScript").GetComponent<LoginPanelScript>();
-        gameRoomsPanelScript = GameObject.Find("LobbyScript").GetComponent<GameRoomsPanelScript>();
         characterRankScreenPanelScript = GameObject.Find("LobbyScript").GetComponent<CharacterRankScreenPanelScript>();
         chattingPanelScript = GameObject.Find("LobbyScript").GetComponent<ChattingPanelScript>();
         gameStartScript = GameObject.Find("PhotonLobbyScript").GetComponent<GameStartScript>();
@@ -65,7 +63,6 @@ public class LobbyScript : MonoBehaviour
     public void InterGameLoomsButton_Click()
     {
         characterPanelScript.SetActive(false);
-        gameRoomsPanelScript.SetActive(true);
         gameStartScript.OnLogin();
     }
 
@@ -84,8 +81,6 @@ public class LobbyScript : MonoBehaviour
     {
         chattingPanelScript.SetActive(false);
         gameHighScoreHttpRequest.GetGameRanks(); // 게임 랭크 패널은 랭크 불러오기 작업후 가져온다.
-        gameRoomsPanelScript.GameRankOpenButtonInteractable(false);
-        gameRoomsPanelScript.GameChatOpenButtonInteractable(true);
     }
     /// <summary>
     /// 게임 채팅 화면 오픈 버튼
@@ -94,7 +89,5 @@ public class LobbyScript : MonoBehaviour
     {
         characterRankScreenPanelScript.SetActive(false, null);
         chattingPanelScript.SetActive(true);
-        gameRoomsPanelScript.GameRankOpenButtonInteractable(true);
-        gameRoomsPanelScript.GameChatOpenButtonInteractable(false);
     }
 }
