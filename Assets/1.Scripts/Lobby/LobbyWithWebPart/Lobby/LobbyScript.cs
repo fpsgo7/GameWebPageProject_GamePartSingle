@@ -58,12 +58,11 @@ public class LobbyScript : MonoBehaviour
         gameCharacterHttpRequest.CreateGameCharacter(UserInfo.Email, nickname);
     }
     /// <summary>
-    /// 캐릭터 화면에서 게임룸 입장하기
+    /// 캐릭터 화면에서 게임 시작하기
     /// </summary>
-    public void InterGameLoomsButton_Click()
+    public void GameStartButton_Click()
     {
-        characterPanelScript.SetActive(false);
-        gameStartScript.OnLogin();
+        gameStartScript.GameStart();
     }
 
     /// <summary>

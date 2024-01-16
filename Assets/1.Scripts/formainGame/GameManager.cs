@@ -61,8 +61,7 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         //로컬플레이어의 이름을 변수에 넣기
-        myPlayerName = GameStartScript.playerName;
-
+        myPlayerName = GameCharacterInfo.Nickname;
     }
 
     // 게임 시작과 동시에 플레이어가 될 게임 오브젝트를 생성
