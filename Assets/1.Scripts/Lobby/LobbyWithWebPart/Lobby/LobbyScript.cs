@@ -26,7 +26,7 @@ public class LobbyScript : MonoBehaviour
         loginPanelScript = GameObject.Find("LobbyScript").GetComponent<LoginPanelScript>();
         characterRankScreenPanelScript = GameObject.Find("LobbyScript").GetComponent<CharacterRankScreenPanelScript>();
         chattingPanelScript = GameObject.Find("LobbyScript").GetComponent<ChattingPanelScript>();
-        gameStartScript = GameObject.Find("PhotonLobbyScript").GetComponent<GameStartScript>();
+        gameStartScript = GameObject.Find("GameStartScript").GetComponent<GameStartScript>();
     }
 
     private void Start()

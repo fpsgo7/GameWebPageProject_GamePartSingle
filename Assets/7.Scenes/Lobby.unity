@@ -2733,7 +2733,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f2f8debc0e9a1d418c5a2d8fb7c8298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  charttingPanel: {fileID: 0}
+  charttingPanel: {fileID: 49218995340481422}
 --- !u!114 &5401730566629302872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2746,10 +2746,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36719aa2d029a2c4996f099d8d025d21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  createGameCharacterButton: {fileID: 0}
-  nicknameInputField: {fileID: 0}
-  makeGameCharacterPanel: {fileID: 0}
-  createFaildPanel: {fileID: 0}
+  createGameCharacterButton: {fileID: 5401730567536611434}
+  nicknameInputField: {fileID: 5401730566145215634}
+  makeGameCharacterPanel: {fileID: 5401730566803537347}
+  createFaildPanel: {fileID: 5401730566363651863}
 --- !u!114 &5401730566629302873
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2762,9 +2762,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f02a1760fa0bf4c83c120e42a5c4d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  charactersScreenPanel: {fileID: 0}
-  gridSetting: {fileID: 0}
-  gameCharacterRankPrefab: {fileID: 0}
+  charactersScreenPanel: {fileID: 5401730567629794878}
+  gridSetting: {fileID: 5401730567167840388}
+  gameCharacterRankPrefab: {fileID: 439818601717705209, guid: a6f926d294c4850498bf9023a268ca50,
+    type: 3}
 --- !u!4 &5401730566629302876
 Transform:
   m_ObjectHideFlags: 0
@@ -2812,10 +2813,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ffc685d44c20c744be57b1ddb66c852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  userNicknameText: {fileID: 0}
-  gameCharacterNicknameText: {fileID: 0}
-  scoreText: {fileID: 0}
-  characterScreenPanel: {fileID: 0}
+  userNicknameText: {fileID: 5401730566740800949}
+  gameCharacterNicknameText: {fileID: 5401730567482728002}
+  scoreText: {fileID: 5401730567627275486}
+  characterScreenPanel: {fileID: 5401730567731737586}
 --- !u!114 &5401730566629302879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2828,12 +2829,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8bc51f89059da44c94eb1ed96acb12d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loginButton: {fileID: 0}
-  emailInpuField: {fileID: 0}
-  passwordInputField: {fileID: 0}
-  loginServerErrorPanel: {fileID: 0}
-  loginInfoErrorPanel: {fileID: 0}
-  loginPanel: {fileID: 0}
+  loginButton: {fileID: 5401730567729062367}
+  emailInpuField: {fileID: 5401730566378622232}
+  passwordInputField: {fileID: 5401730566007113069}
+  loginServerErrorPanel: {fileID: 5401730567360027422}
+  loginInfoErrorPanel: {fileID: 5401730567427097298}
+  loginPanel: {fileID: 5401730567599575115}
 --- !u!224 &5401730566740800938
 RectTransform:
   m_ObjectHideFlags: 0
