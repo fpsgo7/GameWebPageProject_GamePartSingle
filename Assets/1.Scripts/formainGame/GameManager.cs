@@ -26,11 +26,9 @@ public class GameManager : MonoBehaviour
 
     public GameObject playerPrefab; // 생성할 플레이어 캐릭터 프리팹
 
-    private int score = 0; // 현재 게임 점수
+    public int score = 0; // 현재 게임 점수 
     public bool isGameover { get; private set; } // 게임 오버 상태
     //플레이어 기다리기
-    public int playerCount = 0;//플레이어 수세기
-    private bool isPlayerWait = true;//플레이어 기다리는 상태
     public GameObject enemySpawn; //적 생성기에 접근하여 setvisible로 게임 시작 조절하기
     public GameObject playerWaitView;// 플레이어를 기다리는 동안 ui를 띄워줌
     public GameObject mobilePlayerWaitView;//플레이어 기다리는 모바일 ui
@@ -58,9 +56,13 @@ public class GameManager : MonoBehaviour
     //탈출 관련 변수 
     public GameObject helicopterCamera;
     public GameObject helicopter;
-
     // 점수 업데이트해주는 http 클래스
     private ForMainGameHttp forMainGameHttp;
+    // 타이머 사용하기
+    public GameObject timer;
+    public GameObject mobileTimer;
+    private TimerSimple timerSimple;
+    private TimerSimple mobileTimerSimple;
 
     private void Awake()
     {
@@ -68,6 +70,13 @@ public class GameManager : MonoBehaviour
         myPlayerName = GameCharacterInfo.Nickname;
         // 네트워크를 위한 클래스 객체 연결하기
         forMainGameHttp = GameObject.Find("HTTPRequest").GetComponent<ForMainGameHttp>();
+        // 타이머 객체 가져오기
+#if UNITY_ANDROID
+       mobileTimerSimple = mobileTimerSimple.GetComponent<TimerSimple>();
+#endif
+#if UNITY_STANDALONE
+        timerSimple = timer.GetComponent<TimerSimple>();
+#endif
     }
 
     // 게임 시작과 동시에 플레이어가 될 게임 오브젝트를 생성
@@ -89,6 +98,7 @@ public class GameManager : MonoBehaviour
 #if UNITY_STANDALONE
         mobileUI.SetActive(false);//pc버전일 경우 모바일 ui 비활성화
 #endif
+        GameStart();
     }
 
     // 점수를 추가하고 UI 갱신
@@ -116,13 +126,6 @@ public class GameManager : MonoBehaviour
     // 키보드 입력을 감지하고 룸을 나가게 함
     private void Update()
     {
-       
-        /*
-        if (Input.GetKeyDown(KeyCode.P))//테스트 용 게임 클리어
-        {
-            photonView.RPC("GameClear", RpcTarget.All);
-        }
-        */
         //플레이어가 다죽어있으면 실행
         if (deathCount >= 1 && isClear==false)
         {
@@ -177,22 +180,28 @@ public class GameManager : MonoBehaviour
         isClear = true;//클리어 상태를 true 로 함
 #if UNITY_ANDROID
         mobileClearPanel.SetActive(true);
+         score += mobileTimerSimple.GetTime();
+        mobileTimer.SetActive(false);
 #endif
 #if UNITY_STANDALONE
         clearPanel.SetActive(true);
+        score += timerSimple.GetTime();
+        timer.SetActive(false);
 #endif
-        forMainGameHttp.SetGameHighScore(UIManager.instance.score);
+        forMainGameHttp.SetGameHighScore(score);
+
     }
     //게임 시작
     private void GameStart()
     {
         enemySpawn.SetActive(true);//적생성 실행
-        isPlayerWait = false;//한번만 실행되게함
 #if UNITY_ANDROID
-            mobilePlayerWaitView.SetActive(false);
+       mobilePlayerWaitView.SetActive(false);
+       mobileTimer.SetActive(true);
 #endif
 #if UNITY_STANDALONE
         playerWaitView.SetActive(false);//ui 삭제
+        timer.SetActive(true);
 #endif
     }
 }

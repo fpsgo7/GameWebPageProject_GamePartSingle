@@ -29,7 +29,7 @@ public class EndingScroll : MonoBehaviour
         //방장 점수와 손님 점수 구하기
         //UIManager에서 적을 쓰러트리면 나오는 기본점수와
         //GameManager에서 사격 포인트를 얻어온다.
-        masterScore = UIManager.instance.score +
+        masterScore = GameManager.instance.score +
                GameManager.instance.hitScorePlayerMaster;
       
        

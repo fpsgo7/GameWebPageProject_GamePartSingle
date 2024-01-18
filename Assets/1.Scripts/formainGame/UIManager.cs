@@ -27,8 +27,6 @@ public class UIManager : MonoBehaviour {
     public GameObject gameoverUI; // 게임 오버시 활성화할 UI 
     public GameObject restartButton;//재시작 버튼
 
-    public int score = 0;
-
     // 탄약 텍스트 갱신 PlayerShooter에서 호출되어 사용됨
     public void UpdateAmmoText(int magAmmo, int remainAmmo) {
         ammoText.text = magAmmo + "/" + remainAmmo;
@@ -40,10 +38,7 @@ public class UIManager : MonoBehaviour {
     }
     // 점수 텍스트 갱신
     public void UpdateScoreText(int newScore) {
-        
-            scoreText.text = "Score : " + (newScore+ GameManager.instance.hitScorePlayerMaster);
-       
-        score = newScore;
+        scoreText.text = "Score : " + (newScore+ GameManager.instance.hitScorePlayerMaster);
     }
 
     // 적 웨이브 텍스트 갱신 SpawnManager에서 호출되어 사용됨
