@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using ExitGames.Client.Photon;
 using System.Collections;
 
 // 적 게임 오브젝트를 주기적으로 생성
