@@ -49,6 +49,7 @@ public class UserHttpRequest : MonoBehaviour
                 {
                     UserInfo.Email = jObject["userEmail"].ToString();
                     UserInfo.Nickname = jObject["userNickname"].ToString();
+                    UnityAuthentication.UnityAuthenticationPw = jObject["UNITY_AUTHENTICATION"].ToString();
                     gameHighScoreHttpRequest.GetGameRanks();
 
                     if (jObject["isGameCharacter"].ToString().Equals("true"))

@@ -12,16 +12,17 @@ public static class WebRequestScript
 {
     private const string FRONTURL = "http://localhost:8080";// local
     //private const string FRONTURL = "";
+    private const string AFTERURL = "? unityAuthenticaiton = ";
 
     /// <summary>
     /// 内风凭 荤侩 昆 get 夸没
     /// </summary>
-    /// <param name="behindURL"></param>
+    /// <param name="middleURL"></param>
     /// <param name="callback"></param>
     /// <returns></returns>
-    public static IEnumerator WebRequestGet(string behindURL, Action<string> callback)
+    public static IEnumerator WebRequestGet(string middleURL, Action<string> callback)
     {
-        string URL = string.Format("{0}{1}", FRONTURL, behindURL);
+        string URL = string.Format("{0}{1}{2}{3}", FRONTURL, middleURL, AFTERURL, UnityAuthentication.UnityAuthenticationPw);
 
         UnityWebRequest www = UnityWebRequest.Get(URL);// get规侥 按眉 积己
 
@@ -40,13 +41,13 @@ public static class WebRequestScript
     /// <summary>
     /// 内风凭 荤侩 昆 Post 夸没
     /// </summary>
-    /// <param name="behindURL"></param>
+    /// <param name="middleURL"></param>
     /// <param name="json"></param>
     /// <param name="callback"></param>
     /// <returns></returns>
-    public static IEnumerator WebRequestPost(string behindURL, string json, Action<string> callback)
+    public static IEnumerator WebRequestPost(string middleURL, string json, Action<string> callback)
     {
-        string URL = string.Format("{0}{1}", FRONTURL, behindURL);
+        string URL = string.Format("{0}{1}{2}{3}", FRONTURL, middleURL, AFTERURL, UnityAuthentication.UnityAuthenticationPw);
 
         UnityWebRequest www = UnityWebRequest.Post(URL, json);// post规侥 按眉 积己
         byte[] jsonToSend = new UTF8Encoding().GetBytes(json);

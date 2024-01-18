@@ -56,35 +56,4 @@ public class GameHighScoreHttpRequest : MonoBehaviour
             }
         }));
     }
-    // 게임 최고 점수 설정은 향후 게임이 종료될 때 기능 사용하기 
-    public void SetGameHighScore(long newScore)
-    {
-        UpdateGameHighScore updateGameHighScore = new UpdateGameHighScore(UserInfo.Email, newScore);
-        string json = JsonUtility.ToJson(updateGameHighScore);
-
-        StartCoroutine(WebRequestScript.WebRequestPost("/game/gameHighScore",json, (answer) =>
-        {
-            try
-            {
-                JObject jObject = JObject.Parse(answer);
-
-                if (jObject["highScore"] != null)
-                {
-                    Debug.Log("게임 캐릭터 정보 업데이트가 성공하였습니다..");
-                    GameCharacterInfo.HighScore = (long)jObject["highScore"];
-                    characterPanelScript.SetActive(true);
-                    GetGameRanks();
-                }
-                else
-                {
-                    Debug.Log("게임 캐릭터 정보 업데이트가 실패하였습니다.");
-                }
-            }
-            catch (Exception e)
-            {
-                Debug.Log("웹과 통신에 실패하였습니다. \n" +e.Message);
-
-            }
-        }));
-    }
 }
