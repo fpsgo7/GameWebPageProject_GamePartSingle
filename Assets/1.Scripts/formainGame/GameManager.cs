@@ -72,7 +72,7 @@ public class GameManager : MonoBehaviour
         forMainGameHttp = GameObject.Find("HTTPRequest").GetComponent<ForMainGameHttp>();
         // 타이머 객체 가져오기
 #if UNITY_ANDROID
-       mobileTimerSimple = mobileTimerSimple.GetComponent<TimerSimple>();
+       mobileTimerSimple = mobileTimer.GetComponent<TimerSimple>();
 #endif
 #if UNITY_STANDALONE
         timerSimple = timer.GetComponent<TimerSimple>();
