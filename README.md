@@ -42,3 +42,4 @@
 
 ![image](https://github.com/fpsgo7/GameWebPageProject_GamePartSingle/assets/101778043/e815fcd0-418d-4826-a4df-d6866f67398f)
 
+(채팅에 대한 설명은 노션 으로 대체하기)
