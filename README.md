@@ -41,3 +41,11 @@
 
 
 ![image](https://github.com/fpsgo7/GameWebPageProject_GamePartSingle/assets/101778043/e815fcd0-418d-4826-a4df-d6866f67398f)
+
+### 6. 게임클리어와 점수 갱신
+> 게임 클리어시 게임에서는 스프링 서버로 게임 점수를 보내는 http 요청을 한다.
+> 이후 스프링 서버는 새로운 점수가 기존 점수보다 높으면 해당 점수로 업데이트 해준다.
+
+
+![image](https://github.com/fpsgo7/GameWebPageProject_GamePartSingle/assets/101778043/34707109-a708-4535-aea1-b43c4a567bb4)
+
