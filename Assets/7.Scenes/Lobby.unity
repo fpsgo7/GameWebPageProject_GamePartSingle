@@ -1014,7 +1014,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 49218995340481424}
-        m_MethodName: ChatPost
+        m_MethodName: PostChat
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1621,8 +1621,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adcdd62b307bea1419e63c8486595017, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ChatText: {fileID: 49218994966710771}
-  ChatInput: {fileID: 49218994451895980}
+  chatText: {fileID: 49218994966710771}
+  chatInput: {fileID: 49218994451895980}
   playerName: 
 --- !u!222 &49218995638356832
 CanvasRenderer:

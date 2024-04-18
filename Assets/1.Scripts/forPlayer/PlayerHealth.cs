@@ -68,7 +68,7 @@ public class PlayerHealth : LivingEntity {
     }
     private void Update()
     {
-        if (GameManager.instance.isClear == true )
+        if (GameManager.instance.isGameClear == true )
         {
             
             if (playerV3.y >= 40)

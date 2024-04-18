@@ -16,21 +16,16 @@ public class EndingScroll : MonoBehaviour
 
     //각 이름들과 점수들을 넣어 출력하기위한 변수들 
     private string masterName;
-    private string remoteName;
-    private string winnerName;
     private string masterPointNameInfo;
-    private string remotePointNameInfo;
     //점수용 변수
     private int masterScore;
-    private int remoteScroe;
     
     private void Start()
     {
         //방장 점수와 손님 점수 구하기
         //UIManager에서 적을 쓰러트리면 나오는 기본점수와
         //GameManager에서 사격 포인트를 얻어온다.
-        masterScore = GameManager.instance.score +
-               GameManager.instance.hitScorePlayerMaster;
+        masterScore = GameManager.instance.score;
       
        
             //GameManager에서 자신의 이름과 상대 플레이어의 이름이

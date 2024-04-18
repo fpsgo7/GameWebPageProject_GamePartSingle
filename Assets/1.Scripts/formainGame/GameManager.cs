@@ -44,12 +44,10 @@ public class GameManager : MonoBehaviour
     public GameObject goalArea;
     public GameObject clearPanel;//pc버전
     public GameObject mobileClearPanel;//모바일 버전
-    public bool isClear=false;
+    public bool isGameClear=false;
     //플레이어 이름과 추가 점수 엔딩 스클롤 관련
     public int hitScorePlayerMaster = 0;//호스트 플레이어추가점수
-    public int hitScorePlayerRemote = 0;//게스트 플레이어 추가점수
     public string myPlayerName;
-    public string otherPlayerName;
     //매인 게임 UI 선택하기
     public GameObject pcUI;
     public GameObject mobileUI;
@@ -127,7 +125,7 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         //플레이어가 다죽어있으면 실행
-        if (deathCount >= 1 && isClear==false)
+        if (deathCount >= 1 && isGameClear==false)
         {
             GameOver();
         }
@@ -177,18 +175,22 @@ public class GameManager : MonoBehaviour
     //탈출지점 도착
     public void GameClear()
     {
-        isClear = true;//클리어 상태를 true 로 함
+        if (!isGameClear)
+        {
 #if UNITY_ANDROID
         mobileClearPanel.SetActive(true);
          score += mobileTimerSimple.GetTime();
         mobileTimer.SetActive(false);
 #endif
 #if UNITY_STANDALONE
-        clearPanel.SetActive(true);
-        score += timerSimple.GetTime();
-        timer.SetActive(false);
+            score += timerSimple.GetTime();
+            score += hitScorePlayerMaster;
+            clearPanel.SetActive(true);
+            timer.SetActive(false);
 #endif
-        forMainGameHttp.SetGameHighScore(score);
+            forMainGameHttp.SetGameHighScore(score);
+        }
+        isGameClear = true;//클리어 상태를 true 로 함
 
     }
     //게임 시작

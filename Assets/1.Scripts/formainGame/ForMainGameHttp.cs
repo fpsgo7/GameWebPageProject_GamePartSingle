@@ -15,6 +15,7 @@ public class ForMainGameHttp : MonoBehaviour
         string json = JsonUtility.ToJson(updateGameHighScore);
         if (once)
         {
+            once = false;
             StartCoroutine(WebRequestScript.WebRequestPost("/game/gameHighScore", json, (answer) =>
             {
                 try
@@ -30,7 +31,7 @@ public class ForMainGameHttp : MonoBehaviour
                     {
                         Debug.Log("게임 캐릭터 정보 업데이트가 실패하였습니다.");
                     }
-                    once = false;
+                    
                 }
                 catch (Exception e)
                 {
